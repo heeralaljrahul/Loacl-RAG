@@ -1,0 +1,14 @@
+# Core — everything below runs on the CPU except the LLM, which lives in Ollama.
+numpy>=1.26,<3
+fastembed>=0.4,<1          # ONNX embeddings + cross-encoder rerank, no torch
+requests>=2.31
+
+# Document loaders
+pypdf>=4.2
+python-docx>=1.1
+beautifulsoup4>=4.12
+
+# Web UI
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6

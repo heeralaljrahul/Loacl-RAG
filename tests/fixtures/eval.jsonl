@@ -1,0 +1,34 @@
+{"query": "how much holiday do I get", "expect": "25 days of paid annual leave"}
+{"query": "can unused leave roll into next year", "expect": "carried into the following year"}
+{"query": "how far ahead do I book time off", "expect": "ten working days in advance"}
+{"query": "what is the daily allowance when travelling in the country", "expect": "per-diem rate is 45 EUR"}
+{"query": "how many days a week can I work from home", "expect": "remotely up to three days per week"}
+{"query": "maternity pay length", "expect": "26 weeks at full pay"}
+{"query": "E-4471", "expect": "settlement file was rejected"}
+{"query": "what does error E-9003 mean", "expect": "HSM signing key has expired"}
+{"query": "duplicate submission warning is it safe to ignore", "expect": "benign duplicate-submission warning"}
+{"query": "payctl requeue", "expect": "payctl requeue --batch"}
+{"query": "who do I contact if a payment batch is stuck", "expect": "Treasury Systems lead"}
+{"query": "when is the settlement cutoff", "expect": "22:45 UTC"}
+{"query": "minimum password length", "expect": "at least 14 characters"}
+{"query": "do I have to change my password regularly", "expect": "rotation is no longer required"}
+{"query": "my laptop was stolen what do I do", "expect": "reported within 4 hours"}
+{"query": "how long do contractors keep access", "expect": "at most 14 days"}
+{"query": "where do I report a suspected breach", "expect": "security@acme.example"}
+{"query": "how often is the database backed up", "expect": "every six hours"}
+{"query": "how long are backups kept", "expect": "35-day retention"}
+{"query": "can I deploy on a friday", "expect": "Friday afternoon deploys are blocked"}
+{"query": "checkout latency target", "expect": "800 milliseconds"}
+{"query": "when do I get my building pass", "expect": "reception"}
+{"query": "how long is probation", "expect": "three months"}
+{"query": "is business class allowed", "expect": "business class needs VP sign-off"}
+{"query": "hotel spend limit in London", "expect": "260 EUR in London"}
+{"query": "how much notice does the travel desk need for a visa", "expect": "20 working days"}
+{"query": "am I allowed to hire a car", "expect": "car hire needs a reason"}
+{"query": "who is my buddy and for how long", "expect": "buddy for the first six weeks"}
+{"query": "what is the per diem rate and the hotel cap in London?", "expect": ["per-diem rate is 45 EUR", "260 EUR in London"]}
+{"query": "how many days of annual leave do I get and can I carry them over?", "expect": ["25 days of paid annual leave", "carried into the following year"]}
+{"query": "who do I page for error E-4471 and what is the escalation route?", "expect": ["settlement file was rejected", "Treasury Systems lead"]}
+{"query": "how long is probation and who is my buddy for?", "expect": ["Probation lasts three months", "buddy for the first six weeks"]}
+{"query": "what is the password minimum and how fast must I report a lost laptop?", "expect": ["at least 14 characters", "reported within 4 hours"]}
+{"query": "how often are backups taken and how long are they retained?", "expect": ["every six hours", "35-day retention"]}
