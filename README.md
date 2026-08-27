@@ -1,8 +1,18 @@
 # Local RAG
 
-Ask questions about your own documents, answered by a model running on your
-own machine. Nothing leaves the computer: no API keys, no accounts, no
-telemetry, no network calls at query time.
+Two things share one retrieval engine, both running entirely on your own
+machine — no API keys, no accounts, no telemetry, no network at query time.
+
+**A story engine** (`play.py`) — a role-playing game that remembers a
+campaign across hundreds of turns. **→ [STORY.md](STORY.md)**
+
+**Document Q&A** (`cli.py`) — ask questions about your own files, answered
+with citations. Described below.
+
+They share the hybrid search, the reranker and the storage layer; what
+differs is what gets indexed, and that difference is the whole design. See
+[STORY.md](STORY.md) for why a story cannot simply be poured into a document
+index.
 
 ```
 python cli.py ingest "C:\Users\you\Documents"
@@ -268,7 +278,9 @@ Thirty questions is enough to tell a real change from a rearrangement.
 ## Layout
 
 ```
-cli.py                  every command
+play.py                 story engine commands
+game/                   campaign state, memory, narrator + archivist
+cli.py                  document Q&A commands
 rag/config.py           all settings, env-overridable
 rag/loaders.py          file → text blocks
 rag/chunk.py            structure-aware chunking, heading breadcrumbs
@@ -279,7 +291,7 @@ rag/answer.py           prompt assembly and grounding rules
 rag/server.py           FastAPI + SSE streaming
 rag/web/index.html      the UI, one file
 tools/eval_retrieval.py measure retrieval quality
-tests/                  68 tests, no network and no Ollama required
+tests/                  100 tests, no network and no Ollama required
 ```
 
 `python -m pytest tests/ -q`

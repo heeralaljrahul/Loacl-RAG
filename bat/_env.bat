@@ -25,3 +25,30 @@ set RAG_EMBED_MODEL=BAAI/bge-small-en-v1.5
 
 REM  Leave 4 threads for the OS and Ollama; the i9-11900K has 16.
 set RAG_EMBED_THREADS=12
+
+REM ===================================================================
+REM  Story engine (play.py). Only read when playing a campaign.
+REM ===================================================================
+
+REM --- Entry shape (the format rules) --------------------------------
+set GAME_MIN_WORDS=800
+set GAME_MAX_WORDS=900
+REM  Revision passes spent forcing an entry into the window. 1 is the
+REM  right trade on a 9B model: it fixes most misses and costs one extra
+REM  generation. 0 is faster and lets short entries through.
+set GAME_MAX_REPAIRS=1
+
+REM --- Memory --------------------------------------------------------
+REM  How many recalled memories reach the prompt each turn.
+set GAME_RECALL_K=6
+REM  Fold turn summaries into an arc summary this often. Lower = the
+REM  early game stays sharper for longer, at the cost of prompt space.
+set GAME_ARC_EVERY=10
+set GAME_ARC_CONTEXT=6
+
+REM --- Context budget ------------------------------------------------
+REM  Previous entries kept word-for-word. One is right on an 8K context:
+REM  an 850-word entry is ~1200 tokens, and the model still has to write
+REM  another one. Raise this only with NUM_CTX raised too.
+set GAME_VERBATIM_TURNS=1
+set GAME_SUMMARY_TURNS=6

@@ -91,7 +91,10 @@ class Hit:
 
     @property
     def label(self) -> str:
-        name = Path(self.path).name
+        # A source addressed by URI rather than by file path has no
+        # meaningful basename — "memory://event/00001/00" would label itself
+        # "00" — so those identify themselves by title instead.
+        name = self.title if "://" in self.path else Path(self.path).name
         if self.page:
             name = f"{name} p.{self.page}"
         section = strip_title_prefix(self.title, self.heading)

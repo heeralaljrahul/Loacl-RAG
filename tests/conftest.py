@@ -55,3 +55,42 @@ def corpus(tmp_path) -> Path:
     )
     (root / "ignore.bin").write_bytes(b"\x00\x01\x02")
     return root
+
+
+@pytest.fixture
+def seed_file(tmp_path) -> Path:
+    import json
+
+    path = tmp_path / "seed.json"
+    path.write_text(json.dumps({
+        "title": "Test Campaign",
+        "clock": {"date": "2025-04-14", "time": "15:35", "location": "Class 1-A"},
+        "characters": [
+            {"slug": "reina", "name": "Reina", "protagonist": True, "present": True,
+             "role": "protagonist", "sheet": "195 cm tall. National champion."},
+            {"slug": "mirajane", "name": "Mirajane", "present": True,
+             "sheet": "Will not let Reina clean."},
+            {"slug": "louis", "name": "Louis", "present": True, "sheet": "Cleans too."},
+            {"slug": "min", "name": "Min", "present": False, "sheet": "Draws."},
+        ],
+        "relationships": [{"other": "mirajane", "label": "closest", "closeness": 9}],
+        "flags": {"cleaning_duty": "Group Four this week"},
+        "lore": ["Class 1-A runs the standard Japanese classroom rituals."],
+    }), encoding="utf-8")
+    return path
+
+
+@pytest.fixture
+def campaign(tmp_path, seed_file, monkeypatch):
+    from game.campaign import Campaign
+    from game.config import GameConfig
+    from game.testing import reset
+
+    monkeypatch.setattr("game.campaign.CAMPAIGNS", tmp_path / "campaigns")
+    reset()
+    cfg = Config(data_dir=str(tmp_path / "campaigns" / "test"),
+                 embed_backend="hash", llm_backend="fake", rerank=False)
+    with Campaign("test", cfg=cfg,
+                  game_cfg=GameConfig(arc_every=3, recall_k=4)) as instance:
+        instance.seed(seed_file)
+        yield instance

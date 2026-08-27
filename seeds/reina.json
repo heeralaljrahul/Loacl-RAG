@@ -1,0 +1,58 @@
+{
+  "title": "Reina — Class 1-A",
+  "clock": {
+    "date": "2025-04-14",
+    "time": "15:35",
+    "location": "Class 1-A"
+  },
+  "characters": [
+    {
+      "slug": "reina",
+      "name": "Reina",
+      "role": "protagonist, first-year, Class 1-A",
+      "protagonist": true,
+      "present": true,
+      "sheet": "195 cm tall. National champion. Heir to the largest company on Earth.\nSits by the window in Class 1-A.\nHer friends do not let her do cleaning duty; she supervises from the teacher's podium and reads on her iPad instead.\nDespite everything she is, she is happier at school than she has ever been in her life."
+    },
+    {"slug": "mirajane", "name": "Mirajane", "role": "classmate, 1-A", "present": true,
+     "sheet": "One of the two who flatly refuse to let Reina clean. Cleans in her place, every time, without discussion."},
+    {"slug": "louis", "name": "Louis", "role": "classmate, 1-A", "present": true,
+     "sheet": "The other one who will not let Reina clean. Cleans in her place alongside Mirajane."},
+    {"slug": "nao", "name": "Nao", "role": "classmate, 1-A", "present": true,
+     "sheet": "Falls asleep sitting up in class, usually within about ten minutes."},
+    {"slug": "min", "name": "Min", "role": "classmate, 1-A", "present": true,
+     "sheet": "Draws instead of taking notes. Has something to raise with Reina about Thursday."},
+    {"slug": "eve", "name": "Eve", "role": "classmate, 1-A", "present": true,
+     "sheet": "Draws instead of taking notes. Her drawings are markedly simpler than Min's."},
+    {"slug": "kaede", "name": "Kaede", "role": "classmate, 1-A", "present": true,
+     "sheet": "Takes immaculate notes. The one people borrow from."},
+    {"slug": "aoi", "name": "Aoi", "role": "classmate, 1-A", "present": true,
+     "sheet": "Reads ahead of whatever the class is on."},
+    {"slug": "jiyeon", "name": "Jiyeon", "role": "classmate, 1-A", "present": true,
+     "sheet": "Practises choreography under her desk with two fingers when she is bored."},
+    {"slug": "sensei", "name": "Sensei", "role": "homeroom teacher, 1-A", "present": true,
+     "sheet": "Homeroom teacher for 1-A. Stays in the room through cleaning duty rather than leaving the class to it."}
+  ],
+  "relationships": [
+    {"other": "mirajane", "label": "closest", "closeness": 9, "note": "Will not let Reina lift a finger on cleaning duty."},
+    {"other": "louis", "label": "closest", "closeness": 9, "note": "Cleans in Reina's place alongside Mirajane."},
+    {"other": "min", "label": "friend", "closeness": 7, "note": "Has something pending about Thursday."},
+    {"other": "nao", "label": "friend", "closeness": 6, "note": ""},
+    {"other": "eve", "label": "friend", "closeness": 6, "note": ""},
+    {"other": "kaede", "label": "friend", "closeness": 6, "note": ""},
+    {"other": "aoi", "label": "friend", "closeness": 6, "note": ""},
+    {"other": "jiyeon", "label": "friend", "closeness": 6, "note": ""},
+    {"other": "sensei", "label": "teacher", "closeness": 5, "note": ""}
+  ],
+  "flags": {
+    "school_year": "First year, spring term, 2025",
+    "cleaning_duty": "Group Four this week — Reina supervises, never cleans",
+    "thursday": "Min has something to raise with Reina about Thursday"
+  },
+  "lore": [
+    "Reina attends a Japanese high school and is in Class 1-A. The school day ends with the final chime and cleaning duty before the genkan and home.",
+    "Class 1-A runs the standard Japanese classroom rituals: the 日直 calls 起立, 気をつけ, 礼 at the start and close of each lesson.",
+    "When it is Reina's group's turn at cleaning duty, effectively the whole class pitches in, because Mirajane and Louis refuse to let Reina clean and everyone else follows.",
+    "Reina reads on her iPad at the teacher's podium while the others clean around her."
+  ]
+}

@@ -54,6 +54,10 @@ class Ollama:
         if self.cfg.llm_backend == "echo":
             yield from _echo(messages)
             return
+        if self.cfg.llm_backend == "fake":
+            from game.testing import fake_response
+            yield fake_response(messages)
+            return
 
         payload = {
             "model": self.cfg.llm_model,

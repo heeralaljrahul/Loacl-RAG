@@ -154,6 +154,20 @@ Opens <http://localhost:8080>. The right-hand panel shows what was
 retrieved for each question, with scores. `bat\ask.bat` gives you the same
 thing in a terminal.
 
+## 10. Or play a story instead
+
+Same install, same model — a different thing built on it:
+
+```powershell
+bat\story-new.bat reina
+bat\story.bat reina
+```
+
+Opens <http://localhost:8090>. See **[STORY.md](STORY.md)** for how the
+campaign memory works and how to shape the seed file. Expect 25-40 seconds
+per turn on a 10 GB 3080: the entry, the archivist pass that turns it into
+memory, and a revision when the length missed the window.
+
 ---
 
 ## The 10-minute sanity check

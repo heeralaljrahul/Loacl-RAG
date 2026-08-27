@@ -71,3 +71,10 @@ def test_source_label_does_not_repeat_the_document_title():
     hit = Hit(1, 1, "/docs/handbook.md", "Handbook 2026", "Handbook 2026 > Leave",
               None, "text")
     assert hit.label == "handbook.md — Leave"
+
+
+def test_uri_sources_label_by_title_not_basename():
+    """Story memories are addressed by URI, where the basename is a counter."""
+    hit = Hit(1, 1, "memory://event/00001/00", "Turn 1",
+              "Monday, April 14th, 2025 > event", None, "text")
+    assert hit.label == "Turn 1 — Monday, April 14th, 2025 > event"
